@@ -11,9 +11,10 @@ import javabeans.Usuario;
 
 
 public class GestionComunicacion {
+
     public void enviarAlta(int telefono, String nick, boolean sexo, int edad) {
         try {
-            Socket sc = new Socket("192.168.0.187", 8000); //VERIFICAR IP de la máquina que ejecuta el cliente!!!
+            Socket sc = new Socket("192.168.0.120", 8000); //VERIFICAR IP de la máquina que ejecuta el cliente!!!
             PrintStream salida = new PrintStream(sc.getOutputStream());
             salida.println("0"); //indica al servidor que el JSON que va a recibir es "tipo 0" (JSON de alta)
             JSONObject job = new JSONObject();
@@ -32,10 +33,11 @@ public class GestionComunicacion {
 
     public void enviarAlta(Usuario usuario) {
         try {
-            Socket sc = new Socket("192.168.0.187", 8000); //VERIFICAR IP de la máquina que ejecuta el cliente!!!
+            Socket sc = new Socket("192.168.0.120", 8000); //VERIFICAR IP de la máquina que ejecuta el cliente!!!
             PrintStream salida = new PrintStream(sc.getOutputStream());
             salida.println("0"); //indica al servidor que el JSON que va a recibir es "tipo 0" (JSON de alta)
             JSONObject job = new JSONObject();
+            System.out.println(usuario.getTelefono());
             job.put("telefono", usuario.getTelefono());
             job.put("nick", usuario.getNick());
             job.put("sexo", usuario.isSexo());
@@ -52,7 +54,7 @@ public class GestionComunicacion {
 
     public void enviarPreferencias(int prefsexo, int edadmin, int edadmax, int prefrelacion) {
         try {
-            Socket sc = new Socket("192.168.0.187", 8000); //VERIFICAR IP de la máquina que ejecuta el cliente!!!
+            Socket sc = new Socket("192.168.0.120", 8000); //VERIFICAR IP de la máquina que ejecuta el cliente!!!
             PrintStream salida = new PrintStream(sc.getOutputStream());
             salida.println("1"); //indica al servidor que el JSON que va a recibir es "tipo 1" (JSON de preferencias)
             JSONObject job = new JSONObject();

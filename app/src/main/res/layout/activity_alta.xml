@@ -26,12 +26,12 @@
                 android:text="Teléfono" />
 
             <EditText
-                android:id="@+id/edtTel"
+                android:id="@+id/edtTelefono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="number" />
 
         </LinearLayout>
 
@@ -69,12 +69,34 @@
                 android:layout_weight="1"
                 android:text="Sexo" />
 
-            <EditText
-                android:id="@+id/edtSexo"
+            <RadioGroup
+                android:id="@+id/rgSexo"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName" />
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbChico"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Chico" />
+
+                    <RadioButton
+                        android:id="@+id/rbChica"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Chica" />
+                </LinearLayout>
+
+            </RadioGroup>
 
         </LinearLayout>
 
